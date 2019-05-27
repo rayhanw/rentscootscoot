@@ -4,20 +4,17 @@
    <%= link_to 'Add a Scooter', new_scooter_path, class: 'list-btn' %>
  </div>
  <div class="row">
-<!--    <%# @cocktails.each do |cocktail| %>
-     <div class="col-md-4">
-       <div class="card">
-         <div class="card-img" style="background-image: url(<%#= cocktail.photo %>);">
-         </div>
-         <div class="card-body">
-           <h5><%#= cocktail.name %></h5>
-           <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr</p>
-           <div class="card-btn">
-             <a><%#= link_to 'More', cocktail_path(cocktail) %></a>
-           </div>
-         </div>
-       </div>
-     </div>
-   <%# end %> -->
+   <% @scooters.each do |scooter| %>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag scooter.photo, alt: scooter.name, class: 'card-img-top', width: 400, height: 200 %>
+      <div class="card-body">
+        <h5 class="card-title"><%= scooter.name %></h5>
+        <p class="card-text description"><%= scooter.description %></p>
+      </div>
+      <div class="card-actions">
+        <%= link_to "More info", scooter_path(scooter), class: 'action text-primary'  %>
+      </div>
+    </div>
+   <% end %>
  </div>
 </div>
