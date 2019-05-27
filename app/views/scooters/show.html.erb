@@ -1,2 +1,15 @@
-<h1>Scooters#show</h1>
-<p>Find me in app/views/scooters/show.html.erb</p>
+<div class="container">
+  <%= cl_image_tag @scooter.photo, crop: :fill, width: 400, height: 300 %>
+  <p>
+    <strong>Name</strong>: <%= @scooter.name %>
+  </p>
+  <p>
+    <strong>Description</strong>: <%= @scooter.description %>
+  </p>
+  <p>
+    <strong>Status</strong>: <%= @scooter.status %>
+  </p>
+  <p>
+    <strong>Location</strong>: <%= @scooter.location %>
+  </p>
+</div>
