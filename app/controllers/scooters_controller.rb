@@ -1,6 +1,6 @@
 class ScootersController < ApplicationController
   def index
-    @scooters = Scotter.all
+    @scooters = Scooter.all
   end
 
   def show
