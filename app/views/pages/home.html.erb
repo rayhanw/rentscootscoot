@@ -1,2 +1,12 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), url(<%= image_path('banner-bg') %>)">
+  <div class="container">
+     <h1>rentscootscoot</h1>
+
+     <%= simple_form_for :search, url: root_path, method: :get do |f| %>
+       <div class="search-form-control form-group">
+         <input class="form-control string required search-bar" type="text" name="search[query]" id="search_query" placeholder="Search..."/>
+       </div>
+     <% end %>
+
+  </div>
+</div>

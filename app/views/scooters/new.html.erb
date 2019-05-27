@@ -1,2 +1,8 @@
-<h1>Scooters#new</h1>
-<p>Find me in app/views/scooters/new.html.erb</p>
+<div class="container">
+  <%= simple_form_for @scooter do |f| %>
+    <%= f.input :description %>
+    <%= f.input :status, collection: ['Available', 'Unavailable']  %>
+    <%= f.input :location %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
