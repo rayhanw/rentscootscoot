@@ -1,11 +1,12 @@
 class BookingsController < ApplicationController
   def create
-    @user = User.find(params[:user_id])
-    @booking = Booking.new(booking_params)
+    # @scooter_status = ['Available', 'Unavailable']
+    # @user = User.find(1)
+    # @booking = Booking.new(booking_params)
 
-    if @booking.save
-      redirect to user_path(@user)
-    end
+    # if @booking.save
+    #   redirect to user_path(@user)
+    # end
   end
 
   private
