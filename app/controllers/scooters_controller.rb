@@ -1,6 +1,6 @@
 class ScootersController < ApplicationController
   def index
-    @scooters = Scooter.all
+    @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
   end
 
   def show
