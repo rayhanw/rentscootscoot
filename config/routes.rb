@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'scooters/index'
+  get 'scooters/show'
+  get 'scooters/new'
+  get 'scooters/create'
   devise_for :users
   root to: 'pages#home'
   resources :scooters, only: [:index, :show, :new, :create] do
