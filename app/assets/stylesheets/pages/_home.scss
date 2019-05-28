@@ -1,1 +1,83 @@
 // Specific CSS for your home-page
+
+body {
+  margin: 0;
+  font-family: Roboto;
+}
+
+
+h1 {
+  color: #FFB27C;
+  font-family: Roboto;
+  margin: 0 0 30px;
+  margin-top: 40px;
+}
+
+h3{
+  color: #484848;
+  font-family: Roboto;
+  margin: 0 0 30px;
+
+}
+
+h2{
+  color: #484848;
+  font-family: Roboto;
+  margin: 0 0 40px;
+}
+
+
+.text-one {
+  color: #FFB27C;
+  font-family: Roboto;
+  font-weight: bold;
+}
+
+.card-item {
+  color: #484848;
+  font-family: Roboto;
+  padding-top: 20px;
+  padding-left: 20px;
+  padding-right: 15px;
+  letter-spacing: .1px;
+}
+
+.card-item > h6 {
+  font-weight: bold;
+}
+
+
+.card-description {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+
+.btn-description {
+  position: center;
+  padding: .92857rem 1.57143rem;
+  display: inline-block;
+  border: 2px solid;
+  margin: 0;
+  border-radius: 2px;
+  font-size: 1rem;
+  color: #fff;
+  font-weight: 500;
+  background: #FFB27C linear-gradient(0deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.25) 100%);
+  transition: none;
+  a {
+    text-decoration: none;
+    &:hover {
+
+    }
+  }
+}
+
+.button-holder {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
