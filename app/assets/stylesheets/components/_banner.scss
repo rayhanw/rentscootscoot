@@ -33,3 +33,22 @@
   font-weight: bold;
   color: gray;
 }
+
+.banner .actions {
+  list-style: none;
+  position: absolute;
+  bottom: 0;
+  width: 1000px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.banner .actions > li > a {
+  color: white;
+  font-size: 48px;
+  &:hover {
+    color: black;
+    opacity: .4;
+  }
+}
+
