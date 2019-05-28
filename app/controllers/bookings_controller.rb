@@ -6,9 +6,15 @@ class BookingsController < ApplicationController
     @bookings = Booking.where(user: @user)
   end
 
+  def show
+    @user = current_user
+    @booking = Booking.find(params[:id])
+    @review = Review.new
+  end
+
   def create
     @user = current_user
-    @scooter = @user.scooters.find(params[:scooter_id])
+    @scooter = Scooter.find(params[:scooter_id])
     @booking = Booking.new(booking_params)
     @booking.user = @user
     @booking.scooter = @scooter
