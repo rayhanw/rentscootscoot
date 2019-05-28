@@ -1,4 +1,6 @@
 class ScootersController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
+
   def index
     @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
   end
@@ -12,7 +14,7 @@ class ScootersController < ApplicationController
   end
 
   def create
-    @user = User.find(1)
+    @user = current_user
     @scooter = Scooter.new(scooter_params)
     @scooter.user = @user
     if @scooter.save
