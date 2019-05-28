@@ -8,20 +8,32 @@
 
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
-      </li>
-      <li class="nav-item dropdown">
-        <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/rayhanw" />
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">My Bookings</a>
-          <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-        </div>
-      </li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="#">MY BOOKINGS</a>
+        </li>
+        <li class="nav-item mr-2">
+          <a class="nav-link" href="#">BECOME A HOST</a>
+        </li>
+        <li class="nav-item dropdown">
+          <%= cl_image_tag @user.avatar, width: 36, height: 36, crop: :fit, g: :face, class: 'avatar dropdown-toggle', id: 'navbarDropdown', aria: { haspopup: true, expanded: false }, data: { toggle: :dropdown } %>
+          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">View profile</a>
+            <a class="dropdown-item" href="#">Settings</a>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+          </div>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item mr-5">
+          <%= link_to "LOG IN", new_user_session_path, class: 'btn log-in'  %>
+        </li>
+        <li class="nav-item active">
+          <%= link_to "SIGN UP", new_user_registration_path, class: 'btn sign-up' %>
+        </li>
+      </ul>
+    <% end %>
   </div>
 </div>

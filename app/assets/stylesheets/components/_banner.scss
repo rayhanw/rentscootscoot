@@ -22,11 +22,14 @@
   width: 400px;
   height: 50px;
   border-radius: 5px;
-  opacity: .7;
+  border: 2px solid #fff;
+  background-color: #d3d3d3;
+  opacity: .4;
   padding-top: 12px;
 }
 
 .search-bar::placeholder {
   font-size: 28px;
+  font-weight: bold;
   color: gray;
 }
