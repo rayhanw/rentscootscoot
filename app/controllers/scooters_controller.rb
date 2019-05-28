@@ -1,5 +1,6 @@
 class ScootersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
+  before_action :user, only: [:index, :show, :new, :create]
 
   def index
     @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
@@ -7,6 +8,7 @@ class ScootersController < ApplicationController
 
   def show
     @scooter = Scooter.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -14,7 +16,6 @@ class ScootersController < ApplicationController
   end
 
   def create
-    @user = current_user
     @scooter = Scooter.new(scooter_params)
     @scooter.user = @user
     if @scooter.save
@@ -26,7 +27,11 @@ class ScootersController < ApplicationController
 
   private
 
+  def user
+    @user = current_user
+  end
+
   def scooter_params
-    params.require(:scooter).permit(:description, :status, :location, :photo, :name)
+    params.require(:scooter).permit(:description, :price, :status, :location, :photo, :name)
   end
 end

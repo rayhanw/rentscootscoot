@@ -1,15 +1,33 @@
 <div class="container">
-  <%= cl_image_tag @scooter.photo, crop: :fill, width: 400, height: 300 %>
-  <p>
-    <strong>Name</strong>: <%= @scooter.name %>
-  </p>
-  <p>
-    <strong>Description</strong>: <%= @scooter.description %>
-  </p>
-  <p>
-    <strong>Status</strong>: <%= @scooter.status %>
-  </p>
-  <p>
-    <strong>Location</strong>: <%= @scooter.location %>
-  </p>
+  <div class="scoot">
+    <div id="map" class="text-center">
+      <p><%= @scooter.location %></p>
+    </div>
+
+    <div class="details text-center">
+      <div class="name-card">
+        <h1 class="border-bottom"><%= @scooter.name %></h1>
+        <%= cl_image_tag @scooter.photo, crop: :fill, width: 400, height: 300 %>
+      </div>
+
+      <div class="desc-card">
+        <p><strong>Status</strong>: <%= @scooter.status %></p>
+        <p><strong>Description</strong>: <%= @scooter.description %></p>
+      </div>
+
+      <div class="booking-card">
+        <div class="container mt-3">
+          <h3 class="border-bottom">Booking Details</h3>
+        </div>
+        <%= render 'bookings/form' %>
+      </div>
+
+      <div class="review-card">
+        <div class="container mt-3">
+          <h3 class="border-bottom">Reviews</h3>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>

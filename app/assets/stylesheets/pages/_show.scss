@@ -1,0 +1,34 @@
+.scoot {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+  margin-top: 16px;
+  grid-gap: 16px;
+}
+
+.name-card {
+  padding: 8px 12px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+}
+
+.desc-card {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+}
+
+.booking-card {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+}
+
+.review-card {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background-color: #fff;
+  box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+}
