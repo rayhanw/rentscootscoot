@@ -1,11 +1,18 @@
+body {
+  height: 100vh;
+}
+
 .footer {
-  background: #F4F4F4;
+  background: #FFB27C;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100px;
+  bottom: 0;
+  height: 60px;
   padding: 0px 50px;
   color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  z-index: 1;
 }
 
 .footer-links {
@@ -26,7 +33,7 @@
 }
 
 .footer .fa-motorcycle {
-  color: #FFB27C;
+  color: #0E0000;
 }
 
 .grow a:hover{
