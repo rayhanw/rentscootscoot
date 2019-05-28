@@ -1,17 +1,28 @@
 class BookingsController < ApplicationController
-  def create
-    # @scooter_status = ['Available', 'Unavailable']
-    # @user = User.find(1)
-    # @booking = Booking.new(booking_params)
+  before_action :authenticate_user!, only: [:create, :index]
 
-    # if @booking.save
-    #   redirect to user_path(@user)
-    # end
+  def index
+    @user = current_user
+    @bookings = Booking.where(user: @user)
+  end
+
+  def create
+    @user = current_user
+    @scooter = @user.scooters.find(params[:scooter_id])
+    @booking = Booking.new(booking_params)
+    @booking.user = @user
+    @booking.scooter = @scooter
+
+    if @booking.save
+      redirect_to bookings_path
+    else
+      render :index
+    end
   end
 
   private
 
   def booking_params
-    params.require(:booking).permit(:start_date, :end_date, :price, :status)
+    params.require(:booking).permit(:start_date, :end_date)
   end
 end

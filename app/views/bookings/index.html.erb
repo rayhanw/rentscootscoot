@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="m-5">
+    <% @bookings.each do |b| %>
+      <div class="card-product mb-3">
+      <!-- <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg"> -->
+        <%= cl_image_tag b.scooter.photo, width: 120, height: 120  %>
+        <div class="card-product-infos">
+          <h5><%= b.scooter.name %></h5>
+          <p><%= b.start_date %> - <%= b.end_date %></p>
+          <!-- <p><%#= @booking.start_date %> - <%#= @booking.end_date %></p> -->
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Perferendis, adipisci nesciunt blanditiis ducimus repellendus! Ratione, suscipit, facilis ipsum illum animi non deserunt enim minima eum quos blanditiis eos tenetur nesciunt.</p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
