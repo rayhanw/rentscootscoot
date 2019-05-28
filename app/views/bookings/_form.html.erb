@@ -1,7 +1,5 @@
-<%= simple_form_for [@user, @booking] do |f| %>
+<%= simple_form_for [@scooter, @booking] do |f| %>
   <%= f.input :start_date %>
   <%= f.input :end_date %>
-  <%= f.input :price %>
-  <%= f.input :status, collection: @scooter_status %>
-  <%= f.submit class: 'btn btn-primary' %>
+  <%= f.submit class: 'btn btn-primary w-100' %>
 <% end %>
