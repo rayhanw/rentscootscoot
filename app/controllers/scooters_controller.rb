@@ -8,7 +8,10 @@ class ScootersController < ApplicationController
 
   def show
     @scooter = Scooter.find(params[:id])
+    @reviews = @scooter.reviews
     @booking = Booking.new
+    @review = Review.new
+
   end
 
   def new
