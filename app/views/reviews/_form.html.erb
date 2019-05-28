@@ -1,5 +1,7 @@
-<%= simple_form_for [@booking, @review] do |f| %>
-  <%= f.input :rating %>
-  <%= f.input :content %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="container index-list mt-2 mx-5">
+  <%= simple_form_for [@booking, @review] do |f| %>
+    <%= f.input :rating %>
+    <%= f.input :content %>
+    <%= f.submit class: 'btn btn-primary' %>
+  <% end %>
+</div>
