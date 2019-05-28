@@ -1,2 +1,21 @@
-<h1>Scooters#index</h1>
-<p>Find me in app/views/scooters/index.html.erb</p>
+<div class="container">
+ <div class="row my-5">
+   <% @scooters.each do |scooter| %>
+    <div class="card" style="width: 18rem;">
+      <%= cl_image_tag scooter.photo, alt: scooter.name, class: 'card-img-top', width: 400, height: 200 %>
+      <div class="card-body">
+        <h5 class="card-title"><%= scooter.name %></h5>
+        <p class="card-text description"><%= scooter.description %></p>
+      </div>
+      <div class="card-actions">
+        <%= link_to "More info", scooter_path(scooter), class: 'action text-primary'  %>
+      </div>
+    </div>
+   <% end %>
+ </div>
+
+ <div class="list">
+   <h2>Scooter List</h2>
+   <%= link_to 'Add a Scooter', new_scooter_path, class: 'list-btn' %>
+ </div>
+</div>

@@ -1,0 +1,32 @@
+.banner {
+  height: 100vh;
+  padding: 150px 0;
+  text-align: center;
+  background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), asset-url('banner-bg.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.2);
+  font-size: 72px;
+  font-weight: bold;
+  margin-bottom: 24px;
+}
+
+.banner .search-bar {
+  margin: 0 auto;
+  width: 400px;
+  height: 50px;
+  border-radius: 5px;
+  opacity: .7;
+  padding-top: 12px;
+}
+
+.search-bar::placeholder {
+  font-size: 28px;
+  color: gray;
+}
