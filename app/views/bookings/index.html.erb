@@ -4,12 +4,28 @@
       <div class="card-product mb-3">
         <%= cl_image_tag b.scooter.photo, width: 120, height: 120  %>
         <div class="card-product-infos">
-          <h5><%= b.scooter.name %></h5>
+          <h2><%= b.scooter.name %></h2>
           <p><%= b.start_date %> - <%= b.end_date %></p>
           <p><%= b.scooter.description %></p>
-          <h6><%= link_to "Add review", booking_path(b), class: 'text text-secondary'  %></h6>
+
+            <p><button onclick="">Confirm</button>
+            <button onclick="">Edit</button>
+            <button onclick="myFunction()">Delete</button></p>
+
+            <script>
+            function myFunction() {
+              var x = confirm("Are you sure you want to delete?");
+              if (x)
+                  return true;
+              else
+                return false;
+              }
+            </script>
+
+          </div>
+          <h3><%= link_to "Add review", booking_path(b), class: 'text text-secondary' %></h3>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>

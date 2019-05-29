@@ -30,7 +30,7 @@
   object-fit: cover;
 }
 
-.card-product h2 {
+.card-product h2, h3 {
   font-size: 16px;
   font-weight: bold;
   margin: 0;
@@ -47,3 +47,5 @@
 .card-product .card-product-infos {
   padding: 16px;
 }
+
+
