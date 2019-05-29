@@ -13,11 +13,13 @@
       <div class="desc-card">
         <p><strong>Status</strong>: <%= @scooter.status %></p>
         <p><strong>Description</strong>: <%= @scooter.description %></p>
+        <p><strong>Price / day</strong>: $ <%= @scooter.price %>.00</p>
       </div>
 
       <div class="booking-card">
         <div class="container mt-3">
           <h3 class="border-bottom">Booking Details</h3>
+          <p id="days"></p>
         </div>
         <%= render 'bookings/form' %>
       </div>
