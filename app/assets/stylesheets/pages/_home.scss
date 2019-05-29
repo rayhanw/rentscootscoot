@@ -5,7 +5,6 @@ body {
   font-family: Roboto;
 }
 
-
 h1 {
   color: #FFB27C;
   font-family: Roboto;
@@ -13,19 +12,21 @@ h1 {
   margin-top: 40px;
 }
 
-h3{
+h3 {
   color: #484848;
   font-family: Roboto;
   margin: 0 0 30px;
-
 }
 
-h2{
+h2 {
   color: #484848;
   font-family: Roboto;
   margin: 0 0 40px;
 }
 
+#about-us {
+  margin-bottom: 100px;
+}
 
 .text-one {
   color: #FFB27C;
@@ -46,7 +47,6 @@ h2{
   font-weight: bold;
 }
 
-
 .card-description {
   display: flex;
   flex-direction: row;
@@ -54,7 +54,6 @@ h2{
   justify-content: center;
   align-items: flex-start;
 }
-
 
 .btn-description {
   position: center;
@@ -68,12 +67,6 @@ h2{
   font-weight: 500;
   background: #FFB27C linear-gradient(0deg,rgba(255,255,255,0) 0%,rgba(255,255,255,0.25) 100%);
   transition: none;
-  a {
-    text-decoration: none;
-    &:hover {
-
-    }
-  }
 }
 
 .button-holder {
@@ -84,5 +77,9 @@ h2{
 }
 
 .index-list {
-  height: 87vh;
+  min-height: 100vh;
+}
+
+.list-title {
+  color: black;
 }

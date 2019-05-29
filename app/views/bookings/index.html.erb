@@ -1,4 +1,8 @@
 <div class="container index-list">
+  <div style="margin-top: 5rem;">
+    <h1 class="text-center">My bookings</h1>
+  </div>
+  
   <div class="m-5">
     <% @bookings.each do |b| %>
       <div class="card-product mb-3">
@@ -7,25 +11,27 @@
           <h2><%= b.scooter.name %></h2>
           <p><%= b.start_date %> - <%= b.end_date %></p>
           <p><%= b.scooter.description %></p>
-
-            <p><button onclick="">Confirm</button>
-            <button onclick="">Edit</button>
-            <button onclick="myFunction()">Delete</button></p>
-
-            <script>
-            function myFunction() {
-              var x = confirm("Are you sure you want to delete?");
-              if (x)
-                  return true;
-              else
-                return false;
-              }
-            </script>
-
-          </div>
-          <h3><%= link_to "Add review", booking_path(b), class: 'text text-secondary' %></h3>
+            <!--<p><button>Confirm</button>-->
+          <button onclick="myFunction()">Delete</button></p>
+          <script>
+          function myFunction() {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+              return false;
+            }
+          </script>
         </div>
-      <% end %>
-    </div>
+        <div class="card-product-actions">
+          <h6>
+            <%= link_to edit_booking_path(b) do %>
+              <i class="fas fa-edit" style="color: #F9A468"></i>
+            <% end %>
+          </h6>
+          <h6><%= link_to "Add review", booking_path(b), class: 'btn btn-outline-primary' %></h6>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>

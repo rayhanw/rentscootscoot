@@ -1,36 +1,39 @@
 .login-body {
-  height: 87vh;
-  background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), asset-url('banner-bg.jpg');
+  height: 100vh;
+  background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), asset-url('banner-bg.jpg');
   background-size: cover;
   background-position: bottom;
 }
 
 h2 {
   text-align: center;
-  padding-top: 10px;
-  margin-top: 10px;
+  color: white;
+  margin: 10px 0;
 }
-
 
 .login {
   background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 4px;
+  border-radius: 5px;
   color: white;
+  padding: 4px 45px;
 }
 
-.key {
+.login-form-inputs {
+  width: 500px;
+}
+
+.key-login {
   background-color: rgba(0, 0, 0, 0.6);
   width: 50px * 2;
   height: 50px;
   border-top-left-radius: 50px * 2;
   border-top-right-radius: 50px * 2;
-  margin-top: -70px;
+  margin-top: -54px;
   margin-left: auto;
   margin-right: auto;
   color: white;
   text-align: center;
   font-size: 26px;
-  font-weight: lighter;
   .fas {
     margin-top: 20px;
     transform: rotate(-45deg);
@@ -56,4 +59,16 @@ h2 {
   }
 }
 
+.login-btn-su {
+  position: absolute;
+  right: 8px;
+  bottom: 16px;
+}
 
+.new-scooter {
+  margin-top: 5rem;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  min-height: 100vh;
+}

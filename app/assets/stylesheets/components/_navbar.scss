@@ -2,10 +2,18 @@
   justify-content: space-between;
   align-items: center;
   background: white;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
 }
 
 .navbar-lewagon .navbar-collapse {
   flex-grow: 0;
+}
+
+.navbar-brand {
+  font-size: 1em;
 }
 
 .navbar-lewagon .navbar-brand img {
@@ -18,7 +26,7 @@
   color: white;
   background-color: #F9A468;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1em;
   &:hover {
     color: white;
     background-color: #e28646;
@@ -28,7 +36,7 @@
 .log-in {
   color: #F9A468;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 1em;
   &:hover {
     color: #e28646;
   }
