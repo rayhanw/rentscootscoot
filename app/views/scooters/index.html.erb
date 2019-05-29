@@ -1,5 +1,8 @@
 <div class="container index-list">
   <h2 class="list-title">Scooter List</h2>
+  <% if policy(Scooter).create? %>
+    <%= link_to 'Add a Scooter', new_scooter_path, class: 'btn sign-up' %>
+  <% end %>
   <div class="row my-5">
     <% @scooters.each do |scooter| %>
       <div class="card" style="width: 18rem;">
@@ -7,19 +10,12 @@
         <div class="card-body">
           <h5 class="card-title"><%= scooter.name %></h5>
           <p class="card-text description"><%= scooter.description %></p>
+          <p><strong>$ <%= scooter.price %></strong></p>
         </div>
         <div class="card-actions">
           <%= link_to "More info", scooter_path(scooter), class: 'action text-primary'  %>
         </div>
       </div>
     <% end %>
- </div>
-
- <div class="list">
-   <div class="text-right">
-      <% if policy(Scooter).create? %>
-        <%= link_to 'Add a Scooter', new_scooter_path, class: 'btn sign-up' %>
-      <% end %>
-   </div>
- </div>
+  </div>
 </div>
