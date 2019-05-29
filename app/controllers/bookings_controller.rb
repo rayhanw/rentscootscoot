@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :authenticate_user!, only: [:create, :index]
+  before_action :authenticate_user!, only: [:create, :index, :edit, :update]
 
   def index
     @user = current_user
@@ -24,6 +24,19 @@ class BookingsController < ApplicationController
     else
       render :index
     end
+  end
+
+  def edit
+    @user = current_user
+    @booking = Booking.find(params[:id])
+  end
+
+  def update
+    @booking = Booking.find(params[:id])
+    @booking.update(booking_params)
+
+    flash[:notice] = 'Booking successfully updated'
+    redirect_to bookings_path
   end
 
   private
