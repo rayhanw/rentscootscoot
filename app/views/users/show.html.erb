@@ -1,0 +1,54 @@
+<div class="container">
+  <div id="user">
+    <h1 class="text-center" id="my-title">My profile</h1>
+    <div class="user-grid">
+      <div class="user-profile">
+        <div class="text-center mt-2">
+          <% if @user.avatar.present? %>
+            <%= cl_image_tag @user.avatar, alt: @user.name, width: 240, height: 240, crop: :fit, radius: :max %>
+          <% else %>
+            <%= image_tag "http://diazworld.com/images/avatar-placeholder.png", alt: "avatar-placeholder", width: 240, height: 240 %>
+          <% end %>
+          <div class="user-name mt-2">
+            <% if @user.name.present? %>
+              <p><%= @user.name %></p>
+            <% else %>
+              <p>John Doe</p>
+            <% end %>
+          </div>
+        </div>
+      </div>
+
+      <div class="user-socials">
+        <h4 class="text-center mt-2" style="color: #e28646;">Follow me!</h4>
+        <ul class="list-inline text-center mt-5">
+          <li class="list-inline-item socials">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </li>
+          <li class="list-inline-item socials">
+            <a href="#"><i class="fab fa-twitter-square"></i></a>
+          </li>
+          <li class="list-inline-item socials">
+            <a href="#"><i class="fab fa-facebook-square"></i></a>
+          </li>
+          <li class="list-inline-item socials">
+            <a href="#"><i class="fab fa-github-square"></i></a>
+          </li>
+          <li class="list-inline-item socials">
+            <a href="#"><i class="fas fa-envelope"></i></a>
+          </li>
+        </ul>
+      </div>
+
+      <div class="user-content text-center">
+        <h4 class="mt-2" style="color: #e28646">About me!</h4>
+        <p class="mt-0">
+          The great <strong>Michael Scott</strong> once said:
+        </p>
+        <div class="p-3">
+          <q><%= Faker::TvShows::MichaelScott.quote %></q>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
