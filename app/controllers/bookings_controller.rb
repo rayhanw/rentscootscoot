@@ -31,9 +31,15 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking = Booking.find(params[:id])
-    @booking.destroy
+    authorize @booking
+    # raise
+    if @booking.destroy
+      redirect_to bookings_path
+    else
+      render :index
+    end
   end
-    
+
   def edit
     @user = current_user
     @booking = Booking.find(params[:id])
