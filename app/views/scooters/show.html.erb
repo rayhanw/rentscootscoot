@@ -31,8 +31,16 @@
           <br>
           <h4>All reviews</h4>
           <% @reviews.each do |review| %>
-            <p><%= review.rating %></p>
-            <p><%= review.content %></p>
+            <ul style="padding: 0; list-style: none;">
+              <li>
+                <% review.rating.times do %>
+                  <i class="fas fa-star" style="color: #F9A468"></i>
+                <% end %>
+                <% if review.content.present? %>
+                  - <%= review.content %>
+                <% end %>
+              </li>
+            </ul>
           <% end %>
         </div>
       </div>

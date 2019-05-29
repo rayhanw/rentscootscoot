@@ -8,18 +8,20 @@ class ScootersController < ApplicationController
 
   def show
     @scooter = Scooter.find(params[:id])
+    authorize @scooter
     @reviews = @scooter.reviews
     @booking = Booking.new
     @review = Review.new
-
   end
 
   def new
     @scooter = Scooter.new
+    authorize @scooter
   end
 
   def create
     @scooter = Scooter.new(scooter_params)
+    authorize @scooter
     @scooter.user = @user
     if @scooter.save
       redirect_to scooter_path(@scooter)

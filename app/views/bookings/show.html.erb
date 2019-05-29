@@ -2,5 +2,7 @@
   <% flash[:notice] = "You've already left a review" %>
   <%= link_to "Go back", bookings_path, class: 'btn btn-primary' %>
 <% else %>
-  <%= render 'reviews/form' %>
+  <div class="container rev-form">
+    <%= render 'reviews/form' %>
+  </div>
 <% end %>
