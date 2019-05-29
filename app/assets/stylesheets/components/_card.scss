@@ -20,8 +20,7 @@
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  display: flex;
-  align-items: center;
+  position: relative;
 }
 
 .card-product img {
@@ -45,5 +44,17 @@
 }
 
 .card-product .card-product-infos {
-  padding: 16px;
+  position: absolute;
+  top: 8px;
+  left: 13%;
+}
+
+.card-product-actions {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+}
+
+.card-product-actions h6:nth-of-type(2) {
+  margin-top: 48px;
 }
