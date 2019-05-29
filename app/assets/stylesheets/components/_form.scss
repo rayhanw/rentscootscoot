@@ -1,4 +1,5 @@
 #sign-up-form {
+  position: relative;
   width: 500px;
   background-color: rgba(0, 0, 0, .6);
   padding: 20px;
@@ -32,4 +33,8 @@
     margin-top: 20px;
     transform: rotate(-45deg);
   }
+}
+
+#new-scooter {
+  margin-top: 200px;
 }
