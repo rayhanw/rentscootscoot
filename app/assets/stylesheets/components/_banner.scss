@@ -4,6 +4,7 @@
   text-align: center;
   background-image: linear-gradient(rgba(255, 255, 255, .2), rgba(255, 255, 255, .2)), asset-url('banner-bg.jpg');
   background-position: bottom;
+  background-attachment: fixed;
   background-size: cover;
   background-repeat: no-repeat;
 }
