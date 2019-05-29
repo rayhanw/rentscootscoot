@@ -1,6 +1,6 @@
 <div class="index-list mx-5">
   <%= simple_form_for [@booking, @review] do |f| %>
-    <%= f.input :rating %>
+    <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
     <%= f.input :content %>
     <%= f.submit class: 'btn btn-primary' %>
   <% end %>
