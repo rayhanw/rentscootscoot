@@ -2,14 +2,26 @@
   <div style="margin-top: 5rem;">
     <h1 class="text-center">My bookings</h1>
   </div>
+  
   <div class="m-5">
     <% @bookings.each do |b| %>
       <div class="card-product mb-3">
         <%= cl_image_tag b.scooter.photo, width: 120, height: 120  %>
         <div class="card-product-infos">
-          <h5><%= b.scooter.name %></h5>
+          <h2><%= b.scooter.name %></h2>
           <p><%= b.start_date %> - <%= b.end_date %></p>
           <p><%= b.scooter.description %></p>
+            <!--<p><button>Confirm</button>-->
+          <button onclick="myFunction()">Delete</button></p>
+          <script>
+          function myFunction() {
+            var x = confirm("Are you sure you want to delete?");
+            if (x)
+                return true;
+            else
+              return false;
+            }
+          </script>
         </div>
         <div class="card-product-actions">
           <h6>
