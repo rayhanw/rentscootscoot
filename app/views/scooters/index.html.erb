@@ -3,8 +3,8 @@
   <% if policy(Scooter).create? %>
     <%= link_to 'Add a Scooter', new_scooter_path, class: 'btn sign-up' %>
   <% end %>
-  <div class="row my-5">
-    <div class="scooters">
+  <div class="scooters">
+    <div class="row my-5">
       <% @scooters.each do |scooter| %>
         <div class="card" style="width: 18rem;">
           <%= cl_image_tag scooter.photo, alt: scooter.name, class: 'card-img-top', width: 400, height: 200 %>
