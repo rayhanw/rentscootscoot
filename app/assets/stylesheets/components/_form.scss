@@ -1,6 +1,6 @@
 #sign-up-form {
   width: 500px;
-  background-color: rgba(0, 0, 0, .5);
+  background-color: rgba(0, 0, 0, .6);
   padding: 20px;
   margin: 0 auto;
   border-radius: 4px;
@@ -8,11 +8,11 @@
 }
 
 .bg {
-  background-image: asset-url('banner-bg.jpg');
+  background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), asset-url('banner-bg.jpg');
   background-size: cover;
-  background-position: center bottom;
+  background-position: bottom;
   width: 100%;
-  height: 87vh;
+  height: 100vh;
 }
 
 .key {
@@ -22,7 +22,6 @@
   border-top-left-radius: 50px * 2;
   border-top-right-radius: 50px * 2;
   margin-top: -70px;
-  opacity: .7;
   margin-left: auto;
   margin-right: auto;
   color: white;

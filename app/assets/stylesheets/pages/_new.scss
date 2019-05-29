@@ -1,14 +1,14 @@
 .login-body {
-  height: 87vh;
-  background-image: linear-gradient(rgba(255, 255, 255, .5), rgba(255, 255, 255, .5)), asset-url('banner-bg.jpg');
+  height: 100vh;
+  background-image: linear-gradient(rgba(255, 255, 255, .1), rgba(255, 255, 255, .1)), asset-url('banner-bg.jpg');
   background-size: cover;
   background-position: bottom;
 }
 
 h2 {
   text-align: center;
-  padding-top: 10px;
-  margin-top: 10px;
+  color: white;
+  margin: 10px 0;
 }
 
 
@@ -16,9 +16,14 @@ h2 {
   background-color: rgba(0, 0, 0, 0.6);
   border-radius: 4px;
   color: white;
+  padding: 20px 15px;
 }
 
-.key {
+.login-form-inputs {
+  width: 500px;
+}
+
+.key-login {
   background-color: rgba(0, 0, 0, 0.6);
   width: 50px * 2;
   height: 50px;
@@ -30,7 +35,6 @@ h2 {
   color: white;
   text-align: center;
   font-size: 26px;
-  font-weight: lighter;
   .fas {
     margin-top: 20px;
     transform: rotate(-45deg);
