@@ -10,12 +10,15 @@ class BookingsController < ApplicationController
     @user = current_user
     @booking = Booking.find(params[:id])
     @review = Review.new
+    authorize @review
   end
 
   def create
     @user = current_user
     @scooter = Scooter.find(params[:scooter_id])
     @booking = Booking.new(booking_params)
+    authorize @booking
+
     @booking.user = @user
     @booking.scooter = @scooter
 
@@ -29,10 +32,12 @@ class BookingsController < ApplicationController
   def edit
     @user = current_user
     @booking = Booking.find(params[:id])
+    authorize @booking
   end
 
   def update
     @booking = Booking.find(params[:id])
+    authorize @booking
     @booking.update(booking_params)
 
     flash[:notice] = 'Booking successfully updated'

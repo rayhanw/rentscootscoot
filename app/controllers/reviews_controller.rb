@@ -5,10 +5,10 @@ class ReviewsController < ApplicationController
   end
 
   def create
-
     @user = current_user
     @booking = Booking.find(params[:booking_id])
     @review = Review.new(review_params)
+    authorize @review
     @review.booking = @booking
     @review.booking.user = @user
 
