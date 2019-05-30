@@ -12,6 +12,7 @@ const initMapbox = () => {
 
   if (mapElement) {
     const marker = JSON.parse(mapElement.dataset.markers);
+    console.log(marker);
     const popup = new mapboxgl.Popup().setHTML(marker.infoWindow);
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({

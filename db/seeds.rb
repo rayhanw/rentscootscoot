@@ -21,35 +21,35 @@ User.destroy_all
   user.save!
 end
 
-15.times do
-  scooter = Scooter.new(
-    description: Faker::Lorem.sentence(10),
-    status: ['Available', 'Unavailable'].sample,
-    location: Faker::Address.street_address,
-    user_id: rand(1..15),
-    name: Faker::FunnyName.name,
-    price: rand(30..50).to_s
-  )
-  scooter.remote_photo_url = 'https://picsum.photos/200/300'
-  scooter.save!
-end
+# 15.times do
+#   scooter = Scooter.new(
+#     description: Faker::Lorem.sentence(10),
+#     status: ['Available', 'Unavailable'].sample,
+#     location: Faker::Address.street_address,
+#     user_id: rand(1..15),
+#     name: Faker::FunnyName.name,
+#     price: rand(30..50).to_s
+#   )
+#   scooter.remote_photo_url = 'https://picsum.photos/200/300'
+#   scooter.save!
+# end
 
-15.times do
-  booking = Booking.new(
-    user_id: rand(1..15),
-    scooter_id: rand(1..15),
-    start_date: Faker::Date.between(rand(3..9).days.ago, Date.today),
-    end_date: Date.today
-  )
-  booking.save!
+# 15.times do
+#   booking = Booking.new(
+#     user_id: rand(1..15),
+#     scooter_id: rand(1..15),
+#     start_date: Faker::Date.between(rand(3..9).days.ago, Date.today),
+#     end_date: Date.today
+#   )
+#   booking.save!
 
-  review = Review.new(
-    booking: booking,
-    rating: rand(1..5),
-    content: Faker::Lorem.sentence(10)
-  )
-  review.save!
-end
+#   review = Review.new(
+#     booking: booking,
+#     rating: rand(1..5),
+#     content: Faker::Lorem.sentence(10)
+#   )
+#   review.save!
+# end
 
 
 

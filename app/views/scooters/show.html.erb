@@ -48,7 +48,7 @@
       </ul>
     </div>
 
-    <% if @user != @scooter.user %>
+    <% if @user != @scooter.user && @scooter.status == 'Available' %>
       <div class="booking-card">
         <div class="container mt-3">
           <h3 class="border-bottom">Booking Details</h3>
@@ -64,8 +64,6 @@
       </div>
 
       <div class="reviews">
-        <br>
-        <h4>All reviews</h4>
         <% @scooter.reviews.each do |review| %>
           <ul style="padding: 0; list-style: none;">
             <li class="text-left">
