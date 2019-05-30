@@ -3,7 +3,6 @@ class ScootersController < ApplicationController
   before_action :user, only: [:index, :show, :new, :create]
 
   def index
-    #@scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
     @scooters = policy_scope(Scooter)
     @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").not(latitude: nil, longitude: nil) : Scooter.all
     
