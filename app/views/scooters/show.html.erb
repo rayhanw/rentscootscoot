@@ -1,7 +1,12 @@
 <div class="container show-list">
   <div class="scoot">
-    <div id="map" class="text-center">
-      <p><%= @scooter.location %></p>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 600px;"
+      data-markers="<%= @markers.to_json %>"
+      data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    ></div>
     </div>
 
     <div class="details text-center">
