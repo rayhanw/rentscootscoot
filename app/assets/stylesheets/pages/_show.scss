@@ -27,7 +27,6 @@
 
 .show-list {
   margin-top: 5rem;
-  min-height: 140vh;
 }
 
 #user {
@@ -73,4 +72,20 @@
 
 .review-add {
   padding-right: 0 !important;
+}
+
+.delete {
+  position: absolute;
+  right: 8px;
+  bottom: 24px;
+}
+
+.back {
+  position: absolute;
+  left: 12px;
+  bottom: 0px;
+}
+
+.details {
+  min-height: 100vh;
 }
