@@ -4,7 +4,11 @@ class ScootersController < ApplicationController
 
   def index
     @scooters = policy_scope(Scooter)
-    @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").not(latitude: nil, longitude: nil) : Scooter.all
+    if params[:search].present?
+      @scooters = Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%")
+    else
+      @scooters = Scooter.all
+    end
 
     @markers = @scooters.map do |scooter|
       {
