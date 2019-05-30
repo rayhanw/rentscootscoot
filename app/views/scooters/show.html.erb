@@ -25,9 +25,27 @@
     </div>
 
     <div class="desc-card">
-      <p><strong>Status</strong>: <%= @scooter.status %></p>
-      <p><strong>Description</strong>: <%= @scooter.description %></p>
-      <p><strong>Price / day</strong>: $ <%= @scooter.price %>.00</p>
+      <ul class="list-group" style="list-style: none;">
+        <li>
+          <p><strong>Status</strong>: <%= @scooter.status %></p>
+        </li>
+        <li>
+          <p><strong>Description</strong>: <%= @scooter.description %></p>
+        </li>
+        <li>
+          <ul class="list-inline">
+            <li class="list-inline-item">
+              <strong>Price / day</strong>
+            </li>
+            <li class="list-inline-item" style="margin-right: 0 !important">
+              <p>: Rp.</p>
+            </li>
+            <li class="list-inline-item">
+              <p id="scoot-price"><%= @scooter.price %></p>
+            </li>
+          </ul>
+        </li>
+      </ul>
     </div>
 
     <% if @user != @scooter.user %>

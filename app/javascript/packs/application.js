@@ -10,4 +10,4 @@ import { booking } from 'components/booking'
 initAutocomplete();
 initMapbox();
 initMapboxAll();
-// booking();
+booking();
