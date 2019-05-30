@@ -34,7 +34,9 @@
           <h4>All reviews</h4>
           <% @reviews.each do |review| %>
             <ul style="padding: 0; list-style: none;">
-              <li>
+              <li class="text-left">
+                <strong><%= review.booking.user.name %></strong> (<%= review.created_at %>):
+                <br>
                 <% review.rating.times do %>
                   <i class="fas fa-star" style="color: #F9A468"></i>
                 <% end %>
