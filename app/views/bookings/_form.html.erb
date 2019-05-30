@@ -1,5 +1,5 @@
 <%= simple_form_for [@scooter, @booking] do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
+  <%= f.input :start_date, as: :date, html5: true %>
+  <%= f.input :end_date, as: :date, html5: true %>
   <%= f.submit class: 'btn sign-up w-100' %>
 <% end %>

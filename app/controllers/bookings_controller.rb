@@ -21,11 +21,11 @@ class BookingsController < ApplicationController
 
     @booking.user = @user
     @booking.scooter = @scooter
-
     if @booking.save
+      # raise
       redirect_to bookings_path
     else
-      render :index
+      render 'scooters/show'
     end
   end
 
