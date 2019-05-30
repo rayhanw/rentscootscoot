@@ -16,11 +16,22 @@
               <p>John Doe</p>
             <% end %>
           </div>
+          <div class="user-account my-2">
+            <ul class="list-inline">
+              <li class="list-inline-item">
+                <%= link_to "Account credentials", edit_user_registration_path, class: 'btn btn-warning rounded' %>
+              </li>
+              <li class="list-inline-item">
+                <%= link_to "Delete account", user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded'  %>
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 
       <div class="user-socials">
-        <h4 class="text-center mt-2" style="color: #e28646;">Follow me!</h4>
+        <h4 class="text-center my-3" style="color: #e28646;">Follow me!</h4>
+        <h6 class="text-center" style="color: #d3650a">Be sure to follow me on social media!</h6>
         <ul class="list-inline text-center mt-5">
           <li class="list-inline-item socials">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -41,7 +52,7 @@
       </div>
 
       <div class="user-content text-center">
-        <h4 class="mt-2" style="color: #e28646">About me!</h4>
+        <h4 class="my-3" style="color: #e28646">About me!</h4>
         <p class="mt-0">
           The great <strong>Michael Scott</strong> once said:
         </p>
