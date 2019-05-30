@@ -2,7 +2,7 @@
   <%= f.input :name %>
   <%= f.input :description %>
   <%= f.input :status, collection: ['Available', 'Unavailable']  %>
-  <%= f.input :location %>
+  <%= f.input :location, html_options: { id: 'scooter_location' } %>
   <%= f.input :photo %>
   <%= f.input :price %>
   <%= f.input :photo_cache, as: :hidden %>
