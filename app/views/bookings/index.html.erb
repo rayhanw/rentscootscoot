@@ -9,7 +9,12 @@
         <%= cl_image_tag b.scooter.photo, width: 120, height: 120  %>
         <div class="card-product-infos">
           <h2 class="text-left"><%= b.scooter.name %></h2>
-          <p><%= b.start_date %> - <%= b.end_date %></p>
+          <p>
+            <%= b.start_date %> - <%= b.end_date %> (<strong><%= days = ((b.end_date - b.start_date) + 1).to_i %></strong> days)
+          </p>
+          <p>
+            <strong>$ <%= (b.scooter.price).to_i * days %></strong>
+          </p>
           <p><%= b.scooter.description %></p>
           <p id="price"></p>
         </div>
