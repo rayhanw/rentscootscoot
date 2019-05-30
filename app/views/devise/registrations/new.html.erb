@@ -3,7 +3,7 @@
     <div class="key">
       <i class="fas fa-key"></i>
     </div>
-    <h2 class="text-center">Sign up</h2>
+    <h2 class="text-center text-white">Sign up</h2>
     <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
       <%= f.error_notification %>
 
@@ -29,12 +29,12 @@
       </div>
 
       <div class="form-actions">
-        <%= f.button :submit, "Sign up", class: 'btn sign-up' %>
+        <%= f.button :submit, "Sign up", class: "btn-style-signup" %>
       </div>
     <% end %>
     <div class="login-btn-su">
       <div class="container">
-        <%= render "devise/shared/links" %>
+        <%= render "devise/shared/links"%>
       </div>
     </div>
   </div>

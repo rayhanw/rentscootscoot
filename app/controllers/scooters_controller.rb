@@ -3,7 +3,8 @@ class ScootersController < ApplicationController
   before_action :user, only: [:index, :show, :new, :create]
 
   def index
-    @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
+    #@scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
+    @scooters = policy_scope(Scooter)
   end
 
   def show
@@ -29,6 +30,18 @@ class ScootersController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @user = current_user
+    @scooter = Scooter.find(params[:id])
+    authorize @scooter
+    if @scooter.destroy
+      redirect_to scooters_path
+    else
+      render :index
+    end
+  end
+
 
   private
 

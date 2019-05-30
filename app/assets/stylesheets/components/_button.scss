@@ -1,0 +1,13 @@
+.btn-style-signup {
+  border: 1px solid white;
+  border-radius: 4px;
+  color: white;
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+}
+
+.login-link {
+  color: white;
+}
