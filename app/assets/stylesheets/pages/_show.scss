@@ -2,14 +2,6 @@ html {
   scroll-behavior: smooth;
 }
 
-.scoot {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  height: 100vh;
-  margin-top: 16px;
-  grid-gap: 16px;
-}
-
 .name-card {
   padding: 8px 12px;
   background-color: #fff;

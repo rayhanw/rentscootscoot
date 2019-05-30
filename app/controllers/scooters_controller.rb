@@ -3,12 +3,26 @@ class ScootersController < ApplicationController
   before_action :user, only: [:index, :show, :new, :create]
 
   def index
-    @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%") : Scooter.all
+    @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").not(latitude: nil, longitude: nil) : Scooter.all
+
+    @markers = @scooters.map do |scooter|
+      {
+        lat: scooter.latitude,
+        lng: scooter.longitude
+      }
+    end
   end
 
   def show
     @scooter = Scooter.find(params[:id])
     authorize @scooter
+    @markers = {
+      lat: @scooter.latitude,
+      lng: @scooter.longitude,
+      infoWindow: render_to_string(partial: "infowindow", locals: { scooter: @scooter }),
+      image_url: helpers.asset_url('banner-bg.jpg')
+    }
+
     @reviews = @scooter.reviews
     @booking = Booking.new
     @review = Review.new
