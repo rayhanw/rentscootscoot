@@ -10,6 +10,10 @@ class ScooterPolicy < ApplicationPolicy
   end
 
   def create?
-    true
+    user.present?
+  end
+
+  def destroy?
+    record.user == user
   end
 end

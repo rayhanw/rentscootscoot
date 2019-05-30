@@ -13,4 +13,5 @@ class Scooter < ApplicationRecord
   validates :photo, presence: true
   validates :name, presence: true
   validates :price, presence: true
+  validates :destroy, presence: true
 end

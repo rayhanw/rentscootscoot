@@ -1,6 +1,6 @@
 <div class="container index-list">
   <h2 class="list-title">Scooter List</h2>
-  <% if policy(Scooter).create? %>
+  <% if policy(Scooter).new? %>
     <%= link_to 'Add a Scooter', new_scooter_path, class: 'btn sign-up' %>
   <% end %>
   <div class="scooters">

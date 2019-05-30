@@ -14,6 +14,11 @@
         <h1 class="border-bottom"><%= @scooter.name %></h1>
         <%= cl_image_tag @scooter.photo, crop: :fill, width: 400, height: 300 %>
       </div>
+      <h6 class="text-right">
+        <% if policy(@scooter).destroy? %>
+          <%= link_to "Delete", scooter_path(@scooter), method: :delete, class: 'btn btn-warning', data: { confirm: 'Are you sure?' } %>
+        <% end %>
+      </h6>
 
       <div class="desc-card">
         <p><strong>Status</strong>: <%= @scooter.status %></p>

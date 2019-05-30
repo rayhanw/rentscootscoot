@@ -3,8 +3,9 @@ class ScootersController < ApplicationController
   before_action :user, only: [:index, :show, :new, :create]
 
   def index
+    @scooters = policy_scope(Scooter)
     @scooters = params[:search] ? Scooter.where('lower(name) LIKE ?', "%#{params[:search].downcase}%").not(latitude: nil, longitude: nil) : Scooter.all
-
+    
     @markers = @scooters.map do |scooter|
       {
         lat: scooter.latitude,
@@ -43,6 +44,18 @@ class ScootersController < ApplicationController
       render :new
     end
   end
+
+  def destroy
+    @user = current_user
+    @scooter = Scooter.find(params[:id])
+    authorize @scooter
+    if @scooter.destroy
+      redirect_to scooters_path
+    else
+      render :index
+    end
+  end
+
 
   private
 
