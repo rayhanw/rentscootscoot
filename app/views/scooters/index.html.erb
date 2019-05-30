@@ -14,17 +14,21 @@
     ></div>
     <div class="row my-5">
       <% @scooters.each do |scooter| %>
-        <div class="card" style="width: 18rem;">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="card" style="width: 18rem;">
           <%= cl_image_tag scooter.photo, alt: scooter.name, class: 'card-img-top', width: 400, height: 200 %>
           <div class="card-body">
             <h5 class="card-title"><%= scooter.name %></h5>
             <p class="card-text description"><%= scooter.description %></p>
             <p><strong>Rp <%= scooter.price %></strong></p>
           </div>
-          <div class="card-actions">
-            <%= link_to "More info", scooter_path(scooter), class: 'action text-primary'  %>
+          <div class="card-actions ">
+            <%= link_to "More info", scooter_path(scooter), class: 'btn sign-up'  %>
           </div>
         </div>
+          </div>
+      </div>
       <% end %>
     </div>
   </div>

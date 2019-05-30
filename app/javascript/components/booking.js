@@ -34,7 +34,7 @@ const booking = () => {
     const details = { days: numberOfDays, price: (basePrice * numberOfDays) };
 
     days.insertAdjacentHTML('afterbegin',
-      `<strong>${details['days']}</strong> days = $ ${details['price']}`);
+      `<strong>${details['days']}</strong> days = Rp ${details['price']}`);
   });
 }
 
