@@ -12,8 +12,8 @@
         <li class="nav-item">
           <a class="nav-link" href="/bookings">my bookings</a>
         </li>
-        <li class="navitem">
-          <%= link_to "add a scooter", new_scooter_path %>
+        <li class="nav-item">
+          <%= link_to "add a scooter", new_scooter_path, class: 'nav-link' %>
         </li>
         <li class="nav-item dropdown">
           <% if @user.avatar.present? %>
