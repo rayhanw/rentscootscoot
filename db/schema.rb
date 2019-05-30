@@ -38,7 +38,7 @@ ActiveRecord::Schema.define(version: 2019_05_29_055033) do
 
   create_table "scooters", force: :cascade do |t|
     t.text "description"
-    t.string "status"
+    t.string "status", default: 'Available'
     t.string "location"
     t.bigint "user_id"
     t.datetime "created_at", null: false
