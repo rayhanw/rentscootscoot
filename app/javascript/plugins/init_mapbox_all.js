@@ -14,29 +14,25 @@ const addMarkersToMap = (map, markers) => {
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
-
   markers.forEach(marker => bounds.extend([marker.lng, marker.lat]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15 });
 };
 
 const initMapboxAll = () => {
   const mapElement = document.getElementById('all-map');
-  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  if (mapElement != null) {
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
-  if (mapElement) {
-    const map = new mapboxgl.Map({
-      container: 'all-map',
-      style: 'mapbox://styles/mapbox/streets-v10'
-    });
-
-    const markers = JSON.parse(mapElement.dataset.markers);
-      markers.forEach((marker) => {
-        new mapboxgl.Marker()
-          .setLngLat([ marker.lng, marker.lat ])
-          .addTo(map);
+    if (mapElement) {
+      const markers = JSON.parse(mapElement.dataset.markers);
+      const map = new mapboxgl.Map({
+        container: 'all-map',
+        style: 'mapbox://styles/mapbox/streets-v10'
       });
 
-    fitMapToMarkers(map, markers);
-    addMarkersToMap(map, markers);
+      addMarkersToMap(map, markers);
+      fitMapToMarkers(map, markers);
+    }
   }
 };
 

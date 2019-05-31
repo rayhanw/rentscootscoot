@@ -1,13 +1,24 @@
-.scooters {
-  margin-bottom: 6rem;
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
 }
 
 .card {
-  margin: 8px;
+  margin: 0 3em 2em 8px;
+  width: 300px;
+  height: 500px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
-.card .description {
-  min-height: 48px;
+.card .card-body {
+  min-height: 56px;
+  overflow-y: auto;
+}
+
+.card .card-text {
+  min-height: 56px;
 }
 
 .card-item {
@@ -28,11 +39,12 @@
 }
 
 .card-product {
-  overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .card-product img {
@@ -56,9 +68,9 @@
 }
 
 .card-product .card-product-infos {
-  position: absolute;
-  top: 8px;
-  left: 13%;
+  width: 80%;
+  margin-left: 8px;
+  overflow: hidden;
 }
 
 .card-product-actions {

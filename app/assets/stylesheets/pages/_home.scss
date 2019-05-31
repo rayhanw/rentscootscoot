@@ -1,5 +1,4 @@
 // Specific CSS for your home-page
-
 body {
   margin: 0;
   font-family: Roboto;
@@ -78,9 +77,21 @@ h2 {
 
 .index-list {
   margin-top: 5rem;
+  margin-bottom: 5rem;
   min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
 }
 
 .list-title {
   color: black;
+}
+
+#company {
+  &:hover {
+    text-decoration: none;
+  }
 }
