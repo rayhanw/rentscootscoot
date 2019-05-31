@@ -16,3 +16,33 @@
   box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
   border-radius: 3px;
 }
+
+@media only screen and (max-width: 1024px) {
+  #all-map {
+    position: static;
+    width: 90vw;
+    height: 500px;
+    min-width: 0 !important;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+
+  .mapboxgl-control-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  #all-map {
+    position: static;
+    width: 90vw;
+    height: 500px;
+    min-width: 0 !important;
+    margin: 0 auto;
+    margin-bottom: 8px;
+  }
+
+  .mapboxgl-control-container {
+    display: none;
+  }
+}

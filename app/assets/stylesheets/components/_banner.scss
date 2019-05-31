@@ -53,3 +53,35 @@
   }
 }
 
+@media only screen and (max-width: 480px) {
+  .actions {
+    display: inline-block;
+    width: 0 !important;
+    text-align: center;
+    padding: 0;
+  }
+
+  .banner .container form input {
+    width: 340px !important;
+  }
+
+  #banner-title {
+    font-size: 32px;
+  }
+
+  .show {
+    text-align: center;
+    .right-btns {
+      margin-right: 0 !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .actions {
+    display: inline-block;
+    width: 0 !important;
+    text-align: center;
+    padding: 0;
+  }
+}
