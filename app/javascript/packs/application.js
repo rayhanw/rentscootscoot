@@ -8,6 +8,6 @@ import { initAutocomplete } from '../plugins/init_autocomplete';
 import { booking } from 'components/booking'
 
 initAutocomplete();
+booking();
 initMapbox();
 initMapboxAll();
-booking();
