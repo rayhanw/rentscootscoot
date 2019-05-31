@@ -43,9 +43,10 @@
         </div>
 
         <div class="acc-settings">
-          <%= link_to "Account credentials", edit_user_registration_path, class: 'user-btn' %>
-
-          <%= link_to "Delete account", user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'user-btn' %>
+          <% if @user == current_user %>
+            <%= link_to "Account credentials", edit_user_registration_path, class: 'user-btn' %>
+            <%= link_to "Delete account", user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'user-btn' %>
+          <% end %>
         </div>
 
       </div>
