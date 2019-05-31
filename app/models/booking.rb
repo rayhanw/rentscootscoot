@@ -8,11 +8,12 @@ class Booking < ApplicationRecord
   validates :scooter, presence: true
   validate :not_blank_date
 
+  private
+
   def not_blank_date
     if !start_date.nil? && !end_date.nil?
       errors.add(:start_date, "can't be in the past") if start_date.to_date < Date.today
       errors.add(:start_date, "can't be after the end date") if start_date.to_date > end_date
-      # raise
     end
   end
 end

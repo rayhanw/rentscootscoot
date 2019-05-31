@@ -22,7 +22,6 @@ class BookingsController < ApplicationController
     @booking.user = @user
     @booking.scooter = @scooter
     if @booking.save
-      # raise
       redirect_to bookings_path
     else
       render 'scooters/show'
@@ -32,7 +31,7 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     authorize @booking
-    # raise
+
     if @booking.destroy
       redirect_to bookings_path
     else

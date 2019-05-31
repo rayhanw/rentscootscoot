@@ -39,6 +39,8 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .card-product img {
@@ -62,9 +64,9 @@
 }
 
 .card-product .card-product-infos {
-  position: absolute;
-  top: 8px;
-  left: 13%;
+  width: 80%;
+  margin-left: 8px;
+  overflow: hidden;
 }
 
 .card-product-actions {

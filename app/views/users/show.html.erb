@@ -15,7 +15,7 @@
         <div class="user-acc">
           <div class="user-avatar text-center">
             <% if @user.avatar.present? %>
-              <%= cl_image_tag @user.avatar, alt: @user.name, width: 240, height: 240, crop: :fit, radius: :max %>
+              <%= cl_image_tag @user.avatar, alt: @user.name, width: 240, height: 240, crop: :fill, g: :face, radius: :max %>
             <% else %>
               <%= image_tag "http://diazworld.com/images/avatar-placeholder.png", alt: "avatar-placeholder", width: 240, height: 240 %>
             <% end %>
@@ -53,12 +53,24 @@
         <h4 class="my-3">My Scooters</h4>
         <div class="own-scooter">
           <% @user.scooters.each do |scoot| %>
-            <%= cl_image_tag scoot.photo, width: 200, height: 150, crop: :fill %>
-            <div class="own-scooter-info">
-              <%= scoot.name %>
-              <br>
-              <%= scoot.description %>
-            </div>
+            <ul class="list-group">
+              <li class="list-group-item mb-2">
+                <div class="scoot-details scoot-deets">
+                  <%= cl_image_tag scoot.photo, width: 200, height: 200, crop: :fill %>
+                  <ul style="list-style: none;">
+                    <li>
+                    <h4><%= scoot.name %></h4>
+                    </li>
+                    <li>
+                      <h6>Status: <%= scoot.status %></h6>
+                    </li>
+                    <li>
+                      <p><%= scoot.description %></p>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
           <% end %>
         </div>
       </div>
