@@ -66,3 +66,16 @@
 .left-logo {
   margin-left: 10px !important;
 }
+
+@media only screen and (max-width: 1024px) {
+  .navbar {
+    width: 100vw;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .navbar {
+    width: 100vw;
+  }
+}
+

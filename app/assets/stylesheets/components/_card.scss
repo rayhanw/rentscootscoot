@@ -77,30 +77,66 @@
   position: absolute;
   right: 8px;
   top: 8px;
+  h6 {
+    font-size: 18px;
+  }
 }
 
-#contact-us ul {
-  margin: 0;
-  padding:0;
-  list-style-type: none;
-  text-align: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between
+@media only screen and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    width: 90vw;
+    margin: 0 auto;
+  }
 
+  .card {
+    margin: 0 auto;
+  }
 }
 
-#contact-us ul li {
-  display: inline;
+@media only screen and (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+
+  .card-product {
+    height: 400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .card-product img {
+    width: 300px;
+    height: 240px;
+  }
+
+  .card-product-infos {
+    margin-top: 40px;
+    overflow: hidden;
+    width: 280px !important;
+  }
+
+  .card-product-actions {
+    position: static;
+    margin-bottom: -50px;
+    margin-left: 8px;
+    text-align: right;
+    h6 {
+      display: inline-block;
+      margin-right: 16px;
+      font-size: 24px;
+    }
+  }
 }
 
-#about-title {
-  text-align: center;
-  font-size: 30px;
-}
-
-.text-one {
-  text-align: center;
-  font-size: 28px;
+@media only screen and (max-width: 1024px) {
+  .card-product-infos {
+    width: 430px !important;
+  }
 }

@@ -11,3 +11,9 @@
 .login-link {
   color: white;
 }
+
+@media only screen and (max-width: 768px) {
+  .user-btn {
+    margin-bottom: 16px;
+  }
+}

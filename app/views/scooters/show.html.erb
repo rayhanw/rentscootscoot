@@ -18,9 +18,13 @@
     <div class="name-card">
       <h1 class="border-bottom"><%= @scooter.name %></h1>
       <%= cl_image_tag @scooter.photo, crop: :fill, width: 400, height: 300 %>
-      <div class="destroy-scoot">
-        <i class="fas fa-trash" style="color: orange; font-size: 24px;"></i>
-      </div>
+      <% if @user == @scooter.user %>
+        <div class="destroy-scoot">
+          <%= link_to scooter_path(@scooter), method: :delete, data: { confirm: 'Are you sure?' } do %>
+            <i class="fas fa-trash" style="color: orange; font-size: 24px;"></i>
+          <% end %>
+        </div>
+      <% end %>
     </div>
 
     <div class="desc-card">
