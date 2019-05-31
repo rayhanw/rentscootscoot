@@ -13,7 +13,8 @@ class ScootersController < ApplicationController
     @markers = @scooters.map do |scooter|
       {
         lat: scooter.latitude,
-        lng: scooter.longitude
+        lng: scooter.longitude,
+        infoWindow: render_to_string(partial: "indexinfowindow", locals: { scooter: scooter })
       }
     end
   end

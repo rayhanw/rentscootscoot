@@ -1,4 +1,4 @@
-const price = document.querySelector('#scoot-price')
+const price = document.querySelector('#scoot-price');
 const days = document.getElementById('days');
 
 const booking = () => {
@@ -18,7 +18,7 @@ const booking = () => {
       const numberOfDays = ((end - start) / 86400000) + 1;
 
       days.insertAdjacentHTML('afterbegin',
-        `<strong>${numberOfDays}</strong> days = Rp. ${actualPrice * numberOfDays}`
+        `<strong>${numberOfDays}</strong> days = Rp. <strong>${actualPrice * numberOfDays}</strong>`
         );
     });
   }
