@@ -1,13 +1,24 @@
-.scooters {
+.cards {
   margin-bottom: 6rem;
+  margin-left: 2em;
+  flex-grow: 1;
+  width: 400px;
 }
 
 .card {
-  margin: 8px;
+  margin: 0 2em 2em 2em;
+  height: 500px;
+  max-width: 280px;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-body {
+  min-height: 56px;
 }
 
 .card .description {
-  min-height: 48px;
+  min-height: 56px;
 }
 
 .card-actions {

@@ -1,5 +1,4 @@
 // Specific CSS for your home-page
-
 body {
   margin: 0;
   font-family: Roboto;
@@ -79,6 +78,12 @@ h2 {
 .index-list {
   margin-top: 5rem;
   min-height: 100vh;
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
 }
 
 .list-title {
