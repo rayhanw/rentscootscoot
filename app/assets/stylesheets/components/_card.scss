@@ -73,5 +73,66 @@
   position: absolute;
   right: 8px;
   top: 8px;
+  h6 {
+    font-size: 18px;
+  }
 }
 
+@media only screen and (max-width: 1024px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .cards {
+    grid-template-columns: 1fr;
+    width: 90vw;
+    margin: 0 auto;
+  }
+
+  .card {
+    margin: 0 auto;
+  }
+
+  .card-product {
+    height: 400px;
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+
+  .card-product img {
+    width: 300px;
+    height: 240px;
+  }
+
+  .card-product-infos {
+    margin-top: 40px;
+    overflow: hidden;
+    width: 280px !important;
+  }
+
+  .card-product-actions {
+    position: static;
+    margin-bottom: -50px;
+    margin-left: 8px;
+    text-align: right;
+    h6 {
+      display: inline-block;
+      margin-right: 16px;
+      font-size: 24px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .card-product-infos {
+    width: 430px !important;
+  }
+}
