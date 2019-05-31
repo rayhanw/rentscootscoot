@@ -1,23 +1,23 @@
 .cards {
-  margin-bottom: 6rem;
-  margin-left: 2em;
-  flex-grow: 1;
-  width: 400px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 8px;
 }
 
 .card {
-  margin: 0 2em 2em 2em;
+  margin: 0 3em 2em 8px;
+  width: 300px;
   height: 500px;
-  max-width: 280px;
   border-radius: 3px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
 
 .card .card-body {
   min-height: 56px;
+  overflow-y: auto;
 }
 
-.card .description {
+.card .card-text {
   min-height: 56px;
 }
 
@@ -35,7 +35,6 @@
 }
 
 .card-product {
-  overflow: hidden;
   height: 120px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);

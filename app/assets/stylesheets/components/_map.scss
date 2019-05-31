@@ -8,10 +8,10 @@
 }
 
 #all-map {
-  height: 75vh;
+  height: 90vh;
   position: sticky;
   top: 0;
-  width: 600px;
+  min-width: 600px;
   margin: 0 8px 8px 5em;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
   border-radius: 3px;
