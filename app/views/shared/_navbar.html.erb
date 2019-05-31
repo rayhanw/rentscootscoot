@@ -10,7 +10,7 @@
     <% if user_signed_in? %>
       <ul class="navbar-nav mr-auto right-btns">
         <li class="nav-item">
-          <a class="nav-link" href="/bookings">my bookings</a>
+          <a class="nav-link" href="/scooters">all scooters</a>
         </li>
         <li class="nav-item">
           <%= link_to "add a scooter", new_scooter_path, class: 'nav-link' %>
@@ -21,10 +21,10 @@
           <% else %>
             <%= image_tag "http://diazworld.com/images/avatar-placeholder.png", alt: "avatar" , class: 'avatar dropdown-toggle', id: 'navbarDropdown', aria: { haspopup: true, expanded: false }, data: { toggle: :dropdown } %>
           <% end %>
-          <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <%= link_to "view profile", user_path(@user), class: 'dropdown-item'  %>
-            <a class="dropdown-item" href="#">settings</a>
-            <%= link_to "Log out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <%= link_to "My Bookings", href="/bookings", class: 'dropdown-item'  %>
+            <%= link_to "View Profile", user_path(@user), class: 'dropdown-item'  %>
+            <%= link_to "Log Out", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
           </div>
         </li>
       </ul>
@@ -40,3 +40,5 @@
     <% end %>
   </div>
 </div>
+
+
