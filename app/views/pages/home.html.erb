@@ -2,8 +2,14 @@
   <div class="container">
     <h1 id="banner-title">rentscootscoot</h1>
     <%= form_tag("/scooters", method: 'get') do %>
-      <%= text_field_tag :search, nil, placeholder: "Search...", class: "form-control string required search-bar" %>
+      <%= text_field_tag :search, nil, placeholder: "Search...",  class: "form-control string required search-bar" %>
     <% end %>
+    <br>
+    <br>
+    <div>
+      <%= link_to "See all scooters", scooters_path, class: 'btn sign-up' %>
+    </div>
+
     <ul class="actions">
       <li>
         <a href="#about-title"><i class="fas fa-arrow-circle-down"></i></a>
@@ -16,28 +22,32 @@
   <h1 id="about-title">About us</h1>
   <p>When you book a bike with Rentscootscoot you can be sure that you rent a motorbike or scooter with the most trustworthy scooter and bike rental company worldwide. The customer experience is the same irregardless if you use our service in Bali. Our professional employees truly care and are dedicated to making your life and travel experience easier and more comfortable.</p>
   <p>By partnering with local bike rentals and supplying them with all the tools that we developed over the years, we offer tourists all over the world a fun, safe and well organised experience when renting a bike.</p>
-  <p>Rentscootscoot.co is incorporated in Bali and operates since early 2019. </p>
-    <h6>Our details:</h6>
-  <div class="list-group-item col-xs-12 nopadding_side">
-    <p>Company name: <a href="#" id="company">rentscootcoot.co</a></p>
-    <p>Address: Canggu, Bali</p>
-  </div>
-  <h2 class="text-one">3 easy steps to rent your scooter</h2>
+  <hr>
+  <div class="container">
+  <h2 class="text-one"> Easy as <span style="color:#0E0000">1, 2, 3 ... </span></h2>
+
   <div class="card-description">
     <div class="card-item">
-      <h6>Book Online</h6>
+      <h6> Book Online</h6>
       <p>Easy, fast and safe. We offer many international payment methods so you do not have to worry about foreign cash.</p>
     </div>
     <div class="card-item">
-      <h6>Delivery Service</h6>
+      <h6> Delivery Service</h6>
       <p>Just tell us where you are staying and we will deliver the bikes and accessories to your accomodation free of charge.</p>
     </div>
     <div class="card-item">
-      <h6>Enjoy Your Adventure</h6>
+      <h6> Enjoy Your Adventure</h6>
       <p>Discover breathtaking sceneries and vibrant cities. Just leave the bike for us to pick up by the end of your adventure.</p>
     </div>
   </div>
-  <div class="button-holder">
-      <%= link_to "See all scooters", scooters_path, class: 'btn sign-up' %>
+
+  </div>
+  <hr>
+  <div class="list-group-item col-xs-12 nopadding_side", id="contact-us">
+    <ul>
+      <li><i class="fas fa-map-marker-alt"></i> Canggu, Bali</li>
+      <li><i class="fas fa-envelope-square"></i> info@rentscootscoot.com</li>
+      <li><i class="fas fa-phone-volume"></i> 0813 3819 5588</li>
+    </ul>
   </div>
 </div>
