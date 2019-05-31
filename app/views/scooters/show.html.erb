@@ -70,7 +70,7 @@
         <% @scooter.reviews.each do |review| %>
           <ul style="padding: 0; list-style: none;">
             <li class="text-left">
-              <strong><%= review.booking.user.name %></strong> (<%= review.created_at %>):
+              <strong><%= link_to review.booking.user.name, user_path(review.booking.user), class: 'log-in user-link' %></strong> (<%= review.created_at %>):
               <br>
               <% review.rating.times do %>
                 <i class="fas fa-star" style="color: #F9A468"></i>
