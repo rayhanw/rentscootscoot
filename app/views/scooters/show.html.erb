@@ -1,12 +1,8 @@
-<div class="container show-list">
-  <div class="delete">
-    <h6 class="text-right">
-      <% if policy(@scooter).destroy? %>
-        <%= link_to "Delete", scooter_path(@scooter), method: :delete, class: 'btn btn-warning delete', data: { confirm: 'Are you sure?' } %>
-      <% end %>
-    </h6>
-  </div>
+<div id="back">
+  <%= link_to 'Back to list', scooters_path, class: 'btn sign-up' %>
+</div>
 
+<div class="container show-list">
   <div class="scoot">
     <div
       id="map"
@@ -22,6 +18,9 @@
     <div class="name-card">
       <h1 class="border-bottom"><%= @scooter.name %></h1>
       <%= cl_image_tag @scooter.photo, crop: :fill, width: 400, height: 300 %>
+      <div class="destroy-scoot">
+        <i class="fas fa-trash" style="color: orange; font-size: 24px;"></i>
+      </div>
     </div>
 
     <div class="desc-card">
@@ -80,9 +79,5 @@
         <% end %>
       </div>
     </div>
-  </div>
-
-  <div id="back">
-    <%= link_to 'Back to list', scooters_path, class: 'btn sign-up back'  %>
   </div>
 </div>

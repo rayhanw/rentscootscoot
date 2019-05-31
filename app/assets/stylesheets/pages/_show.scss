@@ -2,6 +2,7 @@
   padding: 8px 12px;
   background-color: #fff;
   box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+  position: relative;
 }
 
 .desc-card {
@@ -27,6 +28,7 @@
 
 .show-list {
   margin-top: 5rem;
+  min-height: 100vh;
 }
 
 #user {
@@ -74,18 +76,20 @@
   padding-right: 0 !important;
 }
 
-.delete {
-  position: absolute;
-  right: 8px;
-  bottom: 24px;
-}
-
-.back {
-  position: absolute;
-  left: 12px;
-  bottom: 0px;
+#back {
+  display: inline-block;
+  position: sticky;
+  top: 60px;
+  left: 10px;
 }
 
 .details {
   min-height: 100vh;
+}
+
+.destroy-scoot {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  right: 8px;
 }
