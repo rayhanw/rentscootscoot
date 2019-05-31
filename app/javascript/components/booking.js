@@ -7,20 +7,22 @@ const booking = () => {
     const bookForm = document.querySelector('#new_booking');
     const startDate = document.getElementById('booking_start_date');
     const endDate = document.getElementById('booking_end_date');
-    bookForm.addEventListener('change', (e) => {
-      const actualPrice = Number.parseInt(text, 10);
-      e.preventDefault();
+    if (bookForm != null) {
+      bookForm.addEventListener('change', (e) => {
+        const actualPrice = Number.parseInt(text, 10);
+        e.preventDefault();
 
-      days.innerHTML = '';
+        days.innerHTML = '';
 
-      const start = new Date(startDate.value);
-      const end = new Date(endDate.value);
-      const numberOfDays = ((end - start) / 86400000) + 1;
+        const start = new Date(startDate.value);
+        const end = new Date(endDate.value);
+        const numberOfDays = ((end - start) / 86400000) + 1;
 
-      days.insertAdjacentHTML('afterbegin',
-        `<strong>${numberOfDays}</strong> days = Rp. <strong>${actualPrice * numberOfDays}</strong>`
-        );
-    });
+        days.insertAdjacentHTML('afterbegin',
+          `<strong>${numberOfDays}</strong> days = Rp. <strong>${actualPrice * numberOfDays}</strong>`
+          );
+      });
+    }
   }
 }
 

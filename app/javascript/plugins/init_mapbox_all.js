@@ -20,23 +20,25 @@ const fitMapToMarkers = (map, markers) => {
 
 const initMapboxAll = () => {
   const mapElement = document.getElementById('all-map');
-  mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+  if (mapElement != null) {
+    mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
-  if (mapElement) {
-    const map = new mapboxgl.Map({
-      container: 'all-map',
-      style: 'mapbox://styles/mapbox/streets-v10'
-    });
-
-    const markers = JSON.parse(mapElement.dataset.markers);
-      markers.forEach((marker) => {
-        new mapboxgl.Marker()
-          .setLngLat([ marker.lng, marker.lat ])
-          .addTo(map);
+    if (mapElement) {
+      const map = new mapboxgl.Map({
+        container: 'all-map',
+        style: 'mapbox://styles/mapbox/streets-v10'
       });
 
-    fitMapToMarkers(map, markers);
-    addMarkersToMap(map, markers);
+      const markers = JSON.parse(mapElement.dataset.markers);
+        markers.forEach((marker) => {
+          new mapboxgl.Marker()
+            .setLngLat([ marker.lng, marker.lat ])
+            .addTo(map);
+        });
+
+      fitMapToMarkers(map, markers);
+      addMarkersToMap(map, markers);
+    }
   }
 };
 

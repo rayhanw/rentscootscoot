@@ -84,3 +84,9 @@ h2 {
 .list-title {
   color: black;
 }
+
+#company {
+  &:hover {
+    text-decoration: none;
+  }
+}

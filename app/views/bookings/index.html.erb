@@ -19,18 +19,22 @@
           <p id="price"></p>
         </div>
         <div class="card-product-actions">
-          <h6 class="text-right">
-            <%= link_to edit_booking_path(b) do %>
+          <h6 class="pb-3">
+            <%= link_to edit_booking_path(b), class: 'log-in' do %>
               <i class="fas fa-edit" style="color: #F9A468"></i>
             <% end %>
           </h6>
 
-          <h6 class="text-right">
-            <%= link_to "Cancel booking", booking_path(b), method: :delete, class: 'btn btn-warning', data: { confirm: 'Are you sure?' } %>
+          <h6 class="pb-3">
+            <%= link_to booking_path(b), method: :delete, class: 'log-in', data: { confirm: 'Cancel booking?' }, alt: 'Cancel booking' do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
           </h6>
 
-          <h6 class="text-right">
-            <%= link_to "Add review", booking_path(b), class: 'btn log-in review-add' %>
+          <h6>
+            <%= link_to booking_path(b), class: 'log-in', alt: 'Add review' do %>
+              <i class="fas fa-plus"></i>
+            <% end %>
           </h6>
         </div>
       </div>
