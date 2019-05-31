@@ -176,3 +176,9 @@
     }
   }
 }
+
+.user-link {
+  &:hover {
+    text-decoration: none;
+  }
+}
