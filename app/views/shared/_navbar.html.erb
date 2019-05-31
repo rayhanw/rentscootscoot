@@ -1,12 +1,12 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <a class="navbar-brand left-logo" href="/">
+  <a class="navbar-brand left-logo ml-2" style="font-size: 20px;" href="/">
     <i class="fas fa-motorcycle">&nbsp;</i>rentscootscoot
   </a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse mr-4" id="navbarSupportedContent">
     <% if user_signed_in? %>
       <ul class="navbar-nav mr-auto right-btns">
         <li class="nav-item">
@@ -30,11 +30,11 @@
       </ul>
     <% else %>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item mr-5">
+        <li class="nav-item mr-5" style="font-size: 20px;">
           <%= link_to "log in", new_user_session_path, class: 'btn log-in'  %>
         </li>
-        <li class="nav-item active">
-          <%= link_to "sign up", new_user_registration_path, class: 'btn sign-up' %>
+        <li class="nav-item active" style="font-size: 20px;">
+          <%= link_to "sign up", new_user_registration_path, class: 'btn log-in' %>
         </li>
       </ul>
     <% end %>
