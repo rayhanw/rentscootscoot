@@ -18,9 +18,9 @@
         <div class="card">
           <%= cl_image_tag scooter.photo, alt: scooter.name, class: 'card-img-top',height: 200 %>
           <div class="card-body">
-            <h5 class="card-title"><%= scooter.name %></h5>
-            <p><strong>Rp <%= scooter.price %></strong></p>
-            <p><%= scooter.status %></p>
+            <h4 class="card-title"><strong><%= scooter.name %></strong></h4>
+            <h5><strong>Rp <%= scooter.price %></strong></h5>
+            <h6><strong><%= scooter.status %></strong></h6>
             <p class="card-text"><%= scooter.description %></p>
           </div>
           <div class="card-actions">
