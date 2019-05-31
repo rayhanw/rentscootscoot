@@ -21,6 +21,10 @@
   min-height: 56px;
 }
 
+.card-item {
+  text-align: center;
+}
+
 .card-actions {
   position: relative;
   background-color: inherit;
@@ -75,3 +79,28 @@
   top: 8px;
 }
 
+#contact-us ul {
+  margin: 0;
+  padding:0;
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between
+
+}
+
+#contact-us ul li {
+  display: inline;
+}
+
+#about-title {
+  text-align: center;
+  font-size: 30px;
+}
+
+.text-one {
+  text-align: center;
+  font-size: 28px;
+}
