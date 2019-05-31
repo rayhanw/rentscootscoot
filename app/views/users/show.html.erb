@@ -1,63 +1,65 @@
-<div class="container">
-  <div id="user">
-    <h1 class="text-center" id="my-title">My profile</h1>
-    <div class="user-grid">
-      <div class="user-profile">
-        <div class="text-center mt-2">
-          <% if @user.avatar.present? %>
-            <%= cl_image_tag @user.avatar, alt: @user.name, width: 240, height: 240, crop: :fit, radius: :max %>
-          <% else %>
-            <%= image_tag "http://diazworld.com/images/avatar-placeholder.png", alt: "avatar-placeholder", width: 240, height: 240 %>
-          <% end %>
-          <div class="user-name mt-2">
-            <% if @user.name.present? %>
-              <p><%= @user.name %></p>
+<div id="user">
+  <div class="" id="my-title">
+    <div class="user-name">
+      <% if @user.name.present? %>
+        <h1><%= @user.name %></h1>
+      <% else %>
+        <h1>John Doe</h1>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="user-profile">
+      <div class="user-card">
+        <div class="user-acc">
+          <div class="user-avatar text-center">
+            <% if @user.avatar.present? %>
+              <%= cl_image_tag @user.avatar, alt: @user.name, width: 240, height: 240, crop: :fit, radius: :max %>
             <% else %>
-              <p>John Doe</p>
+              <%= image_tag "http://diazworld.com/images/avatar-placeholder.png", alt: "avatar-placeholder", width: 240, height: 240 %>
             <% end %>
-          </div>
-          <div class="user-account my-2">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <%= link_to "Account credentials", edit_user_registration_path, class: 'btn btn-warning rounded' %>
-              </li>
-              <li class="list-inline-item">
-                <%= link_to "Delete account", user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger rounded'  %>
-              </li>
-            </ul>
+            <div class="user-socials">
+              <h6 class="text-center">Be sure to follow me on social media!</h6>
+              <ul class="list-inline text-center" style="color: #C4C4C4;">
+                <li class="list-inline-item socials">
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="list-inline-item socials">
+                  <a href="#"><i class="fab fa-twitter-square"></i></a>
+                </li>
+                <li class="list-inline-item socials">
+                  <a href="#"><i class="fab fa-facebook-square"></i></a>
+                </li>
+                <li class="list-inline-item socials">
+                  <a href="#"><i class="fab fa-github-square"></i></a>
+                </li>
+                <li class="list-inline-item socials">
+                  <a href="#"><i class="fas fa-envelope"></i></a>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
-      </div>
 
-      <div class="user-socials">
-        <h4 class="text-center my-3" style="color: #e28646;">Follow me!</h4>
-        <h6 class="text-center" style="color: #d3650a">Be sure to follow me on social media!</h6>
-        <ul class="list-inline text-center mt-5">
-          <li class="list-inline-item socials">
-            <a href="#"><i class="fab fa-instagram"></i></a>
-          </li>
-          <li class="list-inline-item socials">
-            <a href="#"><i class="fab fa-twitter-square"></i></a>
-          </li>
-          <li class="list-inline-item socials">
-            <a href="#"><i class="fab fa-facebook-square"></i></a>
-          </li>
-          <li class="list-inline-item socials">
-            <a href="#"><i class="fab fa-github-square"></i></a>
-          </li>
-          <li class="list-inline-item socials">
-            <a href="#"><i class="fas fa-envelope"></i></a>
-          </li>
-        </ul>
-      </div>
+        <div class="acc-settings">
+          <%= link_to "Account credentials", edit_user_registration_path, class: 'user-btn' %>
 
-      <div class="user-content text-center">
-        <h4 class="my-3" style="color: #e28646">About me!</h4>
-        <p class="mt-0">
-          The great <strong>Michael Scott</strong> once said:
-        </p>
-        <div class="p-3">
-          <q><%= Faker::TvShows::MichaelScott.quote %></q>
+          <%= link_to "Delete account", user_registration_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'user-btn' %>
+        </div>
+
+      </div>
+      <div class="user-content">
+        <h4 class="my-3">My Scooters</h4>
+        <div class="own-scooter">
+          <% @user.scooters.each do |scoot| %>
+            <%= cl_image_tag scoot.photo, width: 200, height: 150, crop: :fill %>
+            <div class="own-scooter-info">
+              <%= scoot.name %>
+              <br>
+              <%= scoot.description %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
