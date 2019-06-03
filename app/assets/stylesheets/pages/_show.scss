@@ -1,7 +1,26 @@
+.map-details-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border: 3px solid black;
+}
+
+.scoot {
+  width: 40%;
+}
+
+.details {
+  width: 57%;
+  border-radius: 4px;
+}
+
+.card-photo {
+  text-align: right;
+}
+
 .name-card {
   padding: 8px 12px;
   background-color: #fff;
-  box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
   position: relative;
 }
 
@@ -49,10 +68,6 @@
   h1 {
     color: white;
   }
-}
-
-.acc-settings {
-
 }
 
 .user-avatar {
